@@ -100,7 +100,7 @@ Expected response:
 ```
 
 ### Automated Integration Tests
-The automated tests us an in-memory H2 database.  To run them, executing the following from the root project directory
+The automated tests use an in-memory H2 database.  To run them, executing the following from the root project directory
 
 ```mvn test```
 
@@ -114,7 +114,20 @@ Data flows through the code as shown in the diagram below.
 * **Controller** Receives HTTP requests, validates inputs, calls the Service, and returns HTTP responses.
 * **Service** Implements the business logic.
 * **Repository** Communicates with the database.  It allows you to save, retrieve, and delete data without using SQL.
-* **DTO** (Data Transfer Object) A Java class used to transfer data between layers.  Necessary to prevent circular dependencies.
+* **DTO** (Data Transfer Object) A Java class used to transfer data between layers.  Necessary to prevent circular dependencies (see below).
 * **Entity** A Java class that represents a table in the database.
 
+### Circular Dependencies
+The Lecturer contains a list of Students and the Student contains a list of Lecturers.  This introduces a circular dependency that
+causes an infinite chain of Lectures to Students to Lecturers to Students, and so on.  In order to break this chain, a Lecturer
+contains Students without Lecturers and Students contain Lecturers without Students.  This model is introduced via the DTOs, specificially
+the Simple DTOs.
 
+## Resiliency
+Resiliency is introduced via Hikari, the connection pool used by Spring Boot to manage database connections.  The following options were used:
+* **maximum-pool-size: 10** Maximum number of connections to the database (protects the database from load).
+* **minimum-idle: 2** Minimum number of open connections (faster response times).
+* **connection-timeout: 30000** A request waits for a connection for a maximum of 30 seconds if all 10 connections are busy (prevents app from hanging).
+* **idle-timeout: 600000** Unused connections are closed after 10 minutes (frees resources).
+* **max-lifetime: 1800000** A connection has a maximum lifetime of 30 minutes (avoids database timeouts).
+* **initialization-fail-timeout: 60000** At startup, try connecting to database for 60 seconds (database startup is slower than app startup).
