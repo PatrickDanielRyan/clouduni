@@ -3,7 +3,7 @@
  *
  * HTTP <--> Controller <--> Service <--> Repository <--> Database
  *
- * The Respository accesses data by communicating with the database.
+ * The Respository saves, retrieves, and deletes data by communicating with the database.
  */
 
 package com.example.clouduni.repository;
