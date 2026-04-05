@@ -1,0 +1,23 @@
+services:
+  app:
+    build: .
+    container_name: clouduni-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/clouduni
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.MySQLDialect
+
+  db:
+    image: mysql:8
+    container_name: clouduni-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: clouduni
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"

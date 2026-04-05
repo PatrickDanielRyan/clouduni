@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: clouduni
+
+  datasource:
+    url: jdbc:mysql://db:3306/clouduni?allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: root
+    hikari:
+      initialization-fail-timeout: 60000
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+

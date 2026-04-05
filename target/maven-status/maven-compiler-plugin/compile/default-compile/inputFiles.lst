@@ -1,0 +1,16 @@
+/home/patrick/jobs/adobe/coding_asignment/clouduni/src/main/java/com/example/clouduni/ClouduniApplication.java
+/home/patrick/jobs/adobe/coding_asignment/clouduni/src/main/java/com/example/clouduni/controller/LecturerController.java
+/home/patrick/jobs/adobe/coding_asignment/clouduni/src/main/java/com/example/clouduni/controller/StudentController.java
+/home/patrick/jobs/adobe/coding_asignment/clouduni/src/main/java/com/example/clouduni/dto/LecturerDto.java
+/home/patrick/jobs/adobe/coding_asignment/clouduni/src/main/java/com/example/clouduni/dto/LecturerResponseDto.java
+/home/patrick/jobs/adobe/coding_asignment/clouduni/src/main/java/com/example/clouduni/dto/LecturerSimpleDto.java
+/home/patrick/jobs/adobe/coding_asignment/clouduni/src/main/java/com/example/clouduni/dto/StudentDto.java
+/home/patrick/jobs/adobe/coding_asignment/clouduni/src/main/java/com/example/clouduni/dto/StudentResponseDto.java
+/home/patrick/jobs/adobe/coding_asignment/clouduni/src/main/java/com/example/clouduni/dto/StudentSimpleDto.java
+/home/patrick/jobs/adobe/coding_asignment/clouduni/src/main/java/com/example/clouduni/exception/GlobalExceptionHandler.java
+/home/patrick/jobs/adobe/coding_asignment/clouduni/src/main/java/com/example/clouduni/model/Lecturer.java
+/home/patrick/jobs/adobe/coding_asignment/clouduni/src/main/java/com/example/clouduni/model/Student.java
+/home/patrick/jobs/adobe/coding_asignment/clouduni/src/main/java/com/example/clouduni/repository/LecturerRepository.java
+/home/patrick/jobs/adobe/coding_asignment/clouduni/src/main/java/com/example/clouduni/repository/StudentRepository.java
+/home/patrick/jobs/adobe/coding_asignment/clouduni/src/main/java/com/example/clouduni/service/LecturerService.java
+/home/patrick/jobs/adobe/coding_asignment/clouduni/src/main/java/com/example/clouduni/service/StudentService.java
