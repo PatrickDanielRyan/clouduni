@@ -1,8 +1,7 @@
 # clouduni
 Backend Service For Cloud Software Engineering University
 
-## Executive Summary
-### API
+## API
 * Add lecturer
   * Endpoint: `/lecturers`
   * JSON Input: `{"name": "John", "surname": "Doe"}`
@@ -16,7 +15,7 @@ Backend Service For Cloud Software Engineering University
   * Endpoint:  `/students/{studentId}`
   * JSON Output: `{"id":1,"name":"Alice","surname":"Smith","lecturers":[{"id":1,"name":"John","surname":"Doe"}]}`
 
-### Starting and Stopping the Application
+## Starting and Stopping the Application
 In the root project directory run
 
 ```docker compose up --build```
@@ -124,10 +123,15 @@ contains Students without Lecturers and Students contain Lecturers without Stude
 the Simple DTOs.
 
 ## Resiliency
-Resiliency is introduced via Hikari, the connection pool used by Spring Boot to manage database connections.  The following options were used:
+Resiliency is introduced via **Hikari**, the connection pool used by Spring Boot to manage database connections.  The following options were used:
 * **maximum-pool-size: 10** Maximum number of connections to the database (protects the database from load).
 * **minimum-idle: 2** Minimum number of open connections (faster response times).
 * **connection-timeout: 30000** A request waits for a connection for a maximum of 30 seconds if all 10 connections are busy (prevents app from hanging).
 * **idle-timeout: 600000** Unused connections are closed after 10 minutes (frees resources).
 * **max-lifetime: 1800000** A connection has a maximum lifetime of 30 minutes (avoids database timeouts).
 * **initialization-fail-timeout: 60000** At startup, try connecting to database for 60 seconds (database startup is slower than app startup).
+
+## Validation
+Validation of the Lecturer and Student names (no empty names and only alphanumeric characters) is performed when converting
+the JSON in the HTTP requests to DTOs.  This is done via the Spring Boot annotations `@NoBlank` and `@Pattern`.
+
