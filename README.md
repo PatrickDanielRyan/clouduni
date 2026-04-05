@@ -20,7 +20,7 @@ In the root project directory run
 
 ```docker compose up --build```
 
-This starts a container running the application and another container running the database.  The application is accessable via port `8080`.
+This starts a container running the application and another container running the database.  The application is accessible via port `8080`.
 
 The application can be stopped by running
 
@@ -119,7 +119,7 @@ Data flows through the code as shown in the diagram below.
 ### Circular Dependencies
 The Lecturer contains a list of Students and the Student contains a list of Lecturers.  This introduces a circular dependency that
 causes an infinite chain of Lectures to Students to Lecturers to Students, and so on.  In order to break this chain, a Lecturer
-contains Students without Lecturers and Students contain Lecturers without Students.  This model is introduced via the DTOs, specificially
+contains Students without Lecturers and Students contain Lecturers without Students.  This model is introduced via the DTOs, specifically
 the Simple DTOs.
 
 ## Resiliency
