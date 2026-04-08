@@ -1,1 +1,5 @@
 *.class
+target/**/*.txt
+target/**/*.xml
+target/**/*.txt
+target/**/*.lst
