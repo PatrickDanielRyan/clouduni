@@ -56,6 +56,9 @@ public class StudentService {
     return toResponseDto(student);
   }
 
+  // Helper function to create a StudentResponseDto.
+  // Used to break the circular dependency between Student and Lecturer by not including an array of students
+  // in the lecturer instance variable.
   public StudentResponseDto toResponseDto(Student student) {
     StudentResponseDto studentResponseDto = new StudentResponseDto();
     studentResponseDto.id = student.getId();
