@@ -45,6 +45,9 @@ getters and setters, and a no-argument constructor.
 * **JPA** (Jakarta Persistence API) Java standard for managing relational data in applications.
 It uses annotations to map Java classes to database tables.
 
+* **ResponseEntity** A class in the Spring Framework that represents the entire HTTP response.
+It consists of a Status Code (`200 OK` or `404 Not Found` for example), Headers, and a Body (the data you're sending back, usually JSON).  Without it, Spring usually defaults to a status code of `200 OK`.
+
 * **REST** (Representational State Transfer) software architectural style that defines how computer systems
 on the internet communicate.  In REST, everything is a resource and the server sends back a representation
 of its current state when a resource is requested.  The server is stateless since it does not store
