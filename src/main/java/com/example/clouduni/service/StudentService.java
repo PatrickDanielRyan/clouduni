@@ -37,11 +37,13 @@ public class StudentService {
     Student student = new Student();
     student.setName(studentDto.getName());
     student.setSurname(studentDto.getSurname());
+
+    // This reassignment ensures that an Id is created for the student and that the entity that is persisted and managed
+    // by Hibernate is stored in the Lecturer entity.
     student = studentRepository.save(student);
 
-    // Only update owning side to avoid recursion issues
+    // Only update owning side to avoid recursion issues (don't do student.getLecturers().add(lecturer)).
     lecturer.getStudents().add(student);
-    // student.getLecturers().add(lecturer);
     lecturerRepository.save(lecturer);
 
     return toResponseDto(student);
