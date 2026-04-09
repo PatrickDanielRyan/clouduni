@@ -10,6 +10,8 @@ Start with `@`, for example `@Entity`.
   * **Update** maps to `PUT/PATCH` in HTML and `UPDATE` in SQL
   * **Delete** maps to `DELETE` in HTML and `DELETE` in SQL
 
+* **Data Transfer Object** (DTO) used to transfer objects between layers.  Allows API to be independent of database structure and other internal fields.
+
 * **Dependency Injection** A design pattern in which an object does not create the other objects it needs.
 Instead, the objects it needs are injected (passed) into it.
 
@@ -37,7 +39,7 @@ servers on the web.
 
 * **Jackson** A Java library that converts between JSON and Java classes.
 
-* **Jakarta** Set of specifications that defines standards used when Java applications.
+* **Jakarta** Set of specifications that defines standards for Java applications.
 
 * **JavaBean** A standard Java class that follows a specific set of coding rules.  These include private fields,
 getters and setters, and a no-argument constructor.

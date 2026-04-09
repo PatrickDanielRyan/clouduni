@@ -7,7 +7,7 @@ List of annotations used in this project.
 
 * **@Autowired** In Spring Boot, it is the "switch" that triggers Dependency Injection.  Without it, you would need to use `new`.
 
-* **@Entity** A a "mapping" label in JPA. It tells the Hibernate engine that a specific Java class should be treated as a database table.
+* **@Entity** A "mapping" label in JPA. It tells the Hibernate engine that a specific Java class should be treated as a database table.
 
 * **@ExceptionHandler** In Spring Boot, it marks a specific method to handle exceptions (errors) that occur during the execution of your REST controllers.
 
