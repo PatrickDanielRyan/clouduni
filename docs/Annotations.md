@@ -17,6 +17,8 @@ List of annotations used in this project.
 
 * **@Id** In JPA (Jakarta Persistence API), it identifies a specific field in your Java class as the Primary Key for a database table.
 
+* **@JoinColumn** In Spring Data JPA (and Hibernate), it is used to define the physical mapping of a foreign key column in your database.
+
 * **@JoinTable** In a Relational Database, it is used to define a separate "link" table that connects two different entities. It is primarily used to manage Many-to-Many relationships
 
 * **@ManyToMany** In a Relational Database, it defines a relationship where multiple records in one table are associated with multiple records in another.
