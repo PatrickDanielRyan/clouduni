@@ -183,4 +183,11 @@ class StudentIntegrationTest {
                 .content(json))
                 .andExpect(status().isBadRequest());
     }
+
+    // Test: Get student that doesn't exist.
+    @Test
+    void shouldReturnErrorWhenStudentNotFound() throws Exception {
+        mockMvc.perform(get("/students/999"))
+                .andExpect(status().isBadRequest());
+    }
 }
